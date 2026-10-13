@@ -8,6 +8,9 @@ Sarawak Energy domestic tariff (Tariff D). You give it any cumulative kWh
 sensor. It counts your usage for the current billing cycle and shows your
 current tier, rate and estimated bill.
 
+> This is a community project. It is not affiliated with or endorsed by
+> Sarawak Energy Berhad.
+
 ## Sensors
 
 | Sensor | Unit | Notes |
