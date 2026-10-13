@@ -1,0 +1,12 @@
+{
+  "domain": "sarawak_energy_tariffs",
+  "name": "Sarawak Energy Tariffs",
+  "codeowners": ["@Atsukio"],
+  "config_flow": true,
+  "documentation": "https://github.com/Atsukio/ha-sarawak-energy-tariffs",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/Atsukio/ha-sarawak-energy-tariffs/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

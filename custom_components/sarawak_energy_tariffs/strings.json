@@ -1,0 +1,64 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sarawak Energy tariff",
+        "description": "Pick a cumulative energy sensor (kWh) for your home's grid import. Usage is counted from the billing day and priced against the tiers below.",
+        "data": {
+          "name": "Name",
+          "source_entity": "Energy sensor",
+          "billing_day": "Billing cycle start day",
+          "mode": "How tiers are charged",
+          "tiers": "Tiers (upper kWh:RM per kWh, one per line)",
+          "minimum_charge": "Minimum monthly charge"
+        },
+        "data_description": {
+          "billing_day": "Day of the month your meter reading resets (1-28).",
+          "tiers": "The last line must start with 'inf'. Defaults are Sarawak Energy Tariff D - Domestic."
+        }
+      }
+    },
+    "error": {
+      "invalid_tiers": "Tiers must be lines of 'upper:rate' with increasing limits, ending with 'inf:rate'."
+    },
+    "abort": {
+      "already_configured": "This energy sensor is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sarawak Energy tariff",
+        "data": {
+          "source_entity": "Energy sensor",
+          "billing_day": "Billing cycle start day",
+          "mode": "How tiers are charged",
+          "tiers": "Tiers (upper kWh:RM per kWh, one per line)",
+          "minimum_charge": "Minimum monthly charge"
+        },
+        "data_description": {
+          "tiers": "The last line must start with 'inf'."
+        }
+      }
+    },
+    "error": {
+      "invalid_tiers": "Tiers must be lines of 'upper:rate' with increasing limits, ending with 'inf:rate'."
+    }
+  },
+  "selector": {
+    "mode": {
+      "options": {
+        "flat": "Flat - all units at the rate of the band your total falls in",
+        "block": "Block - each band's rate only for units within that band"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "period_usage": { "name": "Billing period usage" },
+      "estimated_bill": { "name": "Estimated bill" },
+      "current_rate": { "name": "Current rate" },
+      "current_tier": { "name": "Current tier" }
+    }
+  }
+}
