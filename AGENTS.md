@@ -91,6 +91,31 @@ manifest keys in order: `domain`, `name`, then alphabetical.
 The integration hasn't been run inside a live Home Assistant instance yet;
 only the tariff maths is unit tested.
 
+## Commit messages
+
+All commits follow [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/):
+
+```text
+<type>(<optional scope>)<optional !>: <imperative summary, lower case, no full stop>
+
+<optional body: what changed and why, wrapped at 72 columns>
+
+<optional footers: BREAKING CHANGE: ..., Co-Authored-By: ...>
+```
+
+- **Types:** `feat` (user-visible feature), `fix` (bug fix), `docs`, `refactor`,
+  `test`, `ci`, `build`, `chore`, `perf`, `style`, `revert`.
+- **Scope** is optional: `tariff`, `tracker`, `sensor`, `config-flow`, `brand`. For example, `fix(tracker): ignore negative glitches`.
+- **Breaking changes:** put `!` after the type/scope and add a
+  `BREAKING CHANGE:` footer that explains how to migrate.
+- **Versioning:** the commits since the last release decide the next version.
+  Any breaking change means a major bump, otherwise any `feat` means minor,
+  otherwise any `fix` means patch. `docs`, `ci`, `chore` and similar commits
+  on their own don't need a release.
+- Commits made by an AI agent end with its `Co-Authored-By` trailer as the
+  last footer.
+- Commits before 2026-10-14 predate this rule. Don't rewrite history to fix them.
+
 ## Releasing
 
 HACS offers updates only when a new GitHub release is published.
@@ -110,4 +135,3 @@ Release history:
 - Developed on Windows. `.gitattributes` forces LF line endings.
 - `gh` is installed and authenticated as `Atsukio`. In an already-open
   PowerShell session, refresh `PATH` from the registry if `gh` isn't found.
-- Commits end with a `Co-Authored-By` trailer when an AI agent makes them.
